@@ -1,0 +1,17 @@
+<resources>
+    <style name="Theme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--<item name="android:colorPrimary">@color/color_primary</item>-->
+        <!--<item name="android:colorPrimaryDark">@color/color_primary_dark</item>-->
+        <!--<item name="android:textColorPrimary">@color/text_color_primary</item>-->
+        <!--<item name="android:windowBackground">@color/window_background</item>-->
+        <!--<item name="android:navigationBarColor">@color/navigation_bar</item>-->
+    </style>
+
+        <style name="DarkTheme" parent="android:Theme.Holo">
+            <item name="android:actionBarStyle">@style/DarkActionBar</item>
+        </style>
+
+        <style name="DarkActionBar" parent="android:Widget.Holo.Light.ListView">
+            <item name="android:background">@android:color/transparent</item>
+        </style>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+<!--
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="ToDoListActivity"
+        />
+
+    &lt;!&ndash;<TextView
+        android:layout_width="235dp"
+        android:layout_height="0dp"
+        android:text="@string/todoName"
+        android:id="@+id/item_name" />&ndash;&gt;
+
+    <Button xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add"
+        android:onClick="addItem"
+        android:layout_gravity="right" />
+
+    <EditText
+        android:id="@+id/item_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/item_name_hint"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/item_description"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/item_description_hint"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/item_active_time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/item_active_hint"
+        android:inputType="number" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+     <TextView
+         android:layout_width="290dp"
+         android:layout_height="wrap_content"
+         android:textAppearance="?android:attr/textAppearanceMedium"
+         android:text="@string/todoDescription"
+         android:id="@+id/todoDescription"
+         android:layout_weight="0.08" />-->
+
+</LinearLayout><!-- From: file:/home/amila/MSc/Mobile/new1/Geofencing-master/app/src/main/res/layout/enter_item.xml -->

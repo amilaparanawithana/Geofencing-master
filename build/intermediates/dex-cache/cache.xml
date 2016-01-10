@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-884aa759532b32e9793066e40f256b8269d84560.jar" />
+    </item>
+    <item
+        jar="/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/pre-dexed/debug/classes-c511717f5599c1a99628ffb634a8e0eb98be36f9.jar" />
+    </item>
+    <item
+        jar="/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/pre-dexed/debug/classes-1aa23807387517af4e0c806fcdf41a2e6d0ec9ac.jar" />
+    </item>
+    <item
+        jar="/home/amila/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-6acccc65c6ee039317cf6c600924a4da510cdf36.jar" />
+    </item>
+    <item
+        jar="/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/pre-dexed/debug/classes-738dfad739882c34da2dd91b7cc7541fbdf65eaf.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,27 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=25:21:BB:05:3A:8E:3E:AE:5A:8C:E0:72:48:1A:9D:60:EE:82:B5:27%3Bcom.example.amila.maptest
+
+
+//25:21:BB:05:3A:8E:3E:AE:5A:8C:E0:72:48:1A:9D:60:EE:82:B5:27;com.google.android.gms.location.sample.geofencing
+
+    You can also add your credentials to an existing key, using this line:
+    25:21:BB:05:3A:8E:3E:AE:5A:8C:E0:72:48:1A:9D:60:EE:82:B5:27;com.example.amila.maptest
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <!--<string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+        AIzaSyBA83KxDnqW74E2FJ7sQg8hE3zA6PashdU
+    </string>-->
+     <!--<string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+        AIzaSyAMjoIaG-wa0uIhYWagfJBt3r6lXz9BaaI
+    </string>-->
+</resources>
+
+
+    <!--AIzaSyAMjoIaG-wa0uIhYWagfJBt3r6lXz9BaaI-->

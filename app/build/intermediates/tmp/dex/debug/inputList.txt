@@ -1,0 +1,6 @@
+/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/classes/debug
+/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-6acccc65c6ee039317cf6c600924a4da510cdf36.jar
+/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-884aa759532b32e9793066e40f256b8269d84560.jar
+/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/pre-dexed/debug/classes-c511717f5599c1a99628ffb634a8e0eb98be36f9.jar
+/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/pre-dexed/debug/classes-1aa23807387517af4e0c806fcdf41a2e6d0ec9ac.jar
+/home/amila/MSc/Mobile/new1/Geofencing-master/app/build/intermediates/pre-dexed/debug/classes-738dfad739882c34da2dd91b7cc7541fbdf65eaf.jar
