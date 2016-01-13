@@ -21,7 +21,8 @@
     android:showDividers="middle"
     android:divider="?android:dividerVertical"
     android:dividerPadding="8dp"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/background">
 
     <!-- Dummy text view that will display the name of a random country. -->
     <TextView android:id="@android:id/text1"

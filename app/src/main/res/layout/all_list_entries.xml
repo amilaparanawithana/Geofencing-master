@@ -29,14 +29,16 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:paddingLeft="?android:listPreferredItemPaddingLeft" />
+        android:paddingLeft="?android:listPreferredItemPaddingLeft"
+        android:textColor="@android:color/white"/>
 
     <ImageButton android:id="@+id/edit_button"
         android:layout_width="48dp"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_edit"
+        android:src="@drawable/editicon"
         android:background="?android:selectableItemBackground"
-        android:contentDescription="@string/action_edit_item" />
+        android:contentDescription="@string/action_edit_item"
+        android:backgroundTint="@android:color/background_dark"/>
 
 
 </LinearLayout>

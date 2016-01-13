@@ -20,9 +20,11 @@
     android:padding="@dimen/layout_padding">-->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:gravity="center"
+    android:background="@drawable/logo">
 
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@android:id/list"
