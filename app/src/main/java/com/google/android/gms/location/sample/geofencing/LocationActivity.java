@@ -52,6 +52,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -103,9 +104,13 @@ public class LocationActivity extends FragmentActivity implements
     // Buttons for kicking off the process of adding or removing geofences.
     private Button mAddGeofencesButton;
     private Button mRemoveGeofencesButton;
+    private List<String> persistLocations = new ArrayList<String>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        System.out.println("************************ on create "+InternalStorageUtil.readFromFile(getApplicationContext()));
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
@@ -314,7 +319,7 @@ public class LocationActivity extends FragmentActivity implements
 
     public void addGeofence(LocationEntry locationEntry) {
 
-        mGeofenceList.add(new Geofence.Builder()
+        boolean isAddItem = mGeofenceList.add(new Geofence.Builder()
                 // Set the request ID of the geofence. This is a string to identify this
                 // geofence.
                 .setRequestId(locationEntry.getName())
@@ -327,18 +332,22 @@ public class LocationActivity extends FragmentActivity implements
                 )
 
                         // Set the expiration duration of the geofence. This geofence gets automatically
-                        // removed after this period of time.
-                .setExpirationDuration(locationEntry.getActiveTime())
+                        // removed after this period of time.Active time received in days converted to ms
+                .setExpirationDuration(locationEntry.getActiveTime() * 24 * 60 * 60 * 1000)
 
                         // Set the transition types of interest. Alerts are only generated for these
                         // transition. We track entry and exit transitions in this sample.
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_DWELL | Geofence.GEOFENCE_TRANSITION_ENTER |
                         Geofence.GEOFENCE_TRANSITION_EXIT)
-
+                        //idling time in milliseconds
                 .setLoiteringDelay(Constants.LOITERING_DELAY)
-
                         // Create the geofence.
                 .build());
+
+        if (isAddItem) {
+            persistLocations.add(locationEntry.getName() + ":" + locationEntry.description + ":"
+                    + locationEntry.activeTime + ":" + locationEntry.getLatLng().latitude + ":" + locationEntry.getLatLng().longitude);
+        }
 
     }
 
@@ -350,15 +359,15 @@ public class LocationActivity extends FragmentActivity implements
      */
     public void populateGeofenceList(HashMap<String, LatLng> locationsList) {
 
-        try{
-            FileInputStream fileIn=openFileInput("mytextfile.txt");
-            if(fileIn != null){
+        try {
+            FileInputStream fileIn = openFileInput("mytextfile.txt");
+            if (fileIn != null) {
 
-                InputStreamReader InputRead= new InputStreamReader(fileIn);
+                InputStreamReader InputRead = new InputStreamReader(fileIn);
             }
-        } catch (FileNotFoundException fn){
+        } catch (FileNotFoundException fn) {
 
-        } 
+        }
 
         Constants.MY_LANDMARKS.putAll(locationsList);
         for (Map.Entry<String, LatLng> entry : Constants.MY_LANDMARKS.entrySet()) {
@@ -426,7 +435,7 @@ public class LocationActivity extends FragmentActivity implements
         String activeTime = ((EditText) findViewById(R.id.item_active_time)).getText().toString();
         System.out.println(name + "::" + description + "::" + activeTime);
         System.out.println(this.latLng.longitude);
-        LocationEntry locationEntry = new LocationEntry(this.latLng, name, Integer.valueOf(activeTime));
+        LocationEntry locationEntry = new LocationEntry(this.latLng, name, Integer.valueOf(activeTime), description);
 
         addGeofence(locationEntry);
 
@@ -447,5 +456,28 @@ public class LocationActivity extends FragmentActivity implements
             mMap.animateCamera(yourLocation);
 
         }
+    }
+
+    @Override
+    protected void onPause() {
+
+        System.out.println("************************* going to write on pause");
+        InternalStorageUtil.writeToFile(persistLocations, getApplicationContext());
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+
+        System.out.println("***************************** on resume --" + InternalStorageUtil.readFromFile(getApplicationContext()));
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        System.out.println("************************* going write at destroy");
+        InternalStorageUtil.writeToFile(persistLocations, getApplicationContext());
+        super.onDestroy();
     }
 }

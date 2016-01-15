@@ -10,11 +10,13 @@ public class LocationEntry {
     LatLng latLng;
     String name;
     Integer activeTime;
+    String description;
 
-    public LocationEntry(LatLng latLng, String name, Integer activeTime) {
+    public LocationEntry(LatLng latLng, String name, Integer activeTime, String description) {
         this.latLng = latLng;
         this.name = name;
         this.activeTime = activeTime;
+        this.description = description;
     }
 
 
@@ -40,5 +42,13 @@ public class LocationEntry {
 
     public void setActiveTime(Integer activeTime) {
         this.activeTime = activeTime;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
