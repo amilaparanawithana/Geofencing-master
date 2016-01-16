@@ -30,7 +30,7 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:paddingLeft="?android:listPreferredItemPaddingLeft"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/tertiary_text_dark"/>
 
     <ImageButton android:id="@+id/edit_button"
         android:layout_width="48dp"

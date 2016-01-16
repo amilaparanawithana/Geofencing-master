@@ -27,8 +27,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.gms.location.Geofence;
+import com.google.android.gms.maps.model.LatLng;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 //import android.support.v4.app.NavUtils;
 
@@ -91,9 +99,7 @@ public class LayoutChangesActivity extends Activity {
     private void addItem() {
 
         Sample[] mSamples;
-//        mSamples = new Sample[]{
-//                new Sample(R.string.action_edit_item, EditItemActivity.class),
-//        };
+
         mSamples = new Sample[]{
                 new Sample(R.string.action_edit_item, LocationActivity.class),
         };
@@ -104,9 +110,14 @@ public class LayoutChangesActivity extends Activity {
     private void addMenuItemList() {
         // Instantiate a new "row" view.
 
-        // Set the text in the new row to a random country.
-        ArrayList<Geofence> geofenceList = LocationActivity.mGeofenceList;
+        ArrayList<Geofence> geofenceList;
+        if(LocationActivity.mGeofenceList == null){
+            geofenceList = populateGeofenceList();
+        } else {
+            geofenceList = LocationActivity.mGeofenceList;
+        }
 
+        mContainerView.removeAllViews();
         if(geofenceList!=null){
             for (int i = 0; i < geofenceList.size(); i++) {
                 final ViewGroup newView = (ViewGroup) LayoutInflater.from(this).inflate(
@@ -151,5 +162,42 @@ public class LayoutChangesActivity extends Activity {
             return title.toString();
         }
     }
+
+    public ArrayList<Geofence> populateGeofenceList() {
+
+        ArrayList<Geofence> initialList  = new ArrayList<Geofence>();
+
+        for (Map.Entry<String, LatLng> entry : Constants.MY_LANDMARKS.entrySet()) {
+
+            initialList.add(new Geofence.Builder()
+                    // Set the request ID of the geofence. This is a string to identify this
+                    // geofence.
+                    .setRequestId(entry.getKey())
+
+                            // Set the circular region of this geofence.
+                    .setCircularRegion(
+                            entry.getValue().latitude,
+                            entry.getValue().longitude,
+                            Constants.GEOFENCE_RADIUS_IN_METERS
+                    )
+
+                            // Set the expiration duration of the geofence. This geofence gets automatically
+                            // removed after this period of time.
+                    .setExpirationDuration(Constants.GEOFENCE_EXPIRATION_IN_MILLISECONDS)
+
+                            // Set the transition types of interest. Alerts are only generated for these
+                            // transition. We track entry and exit transitions in this sample.
+                    .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_DWELL | Geofence.GEOFENCE_TRANSITION_ENTER |
+                            Geofence.GEOFENCE_TRANSITION_EXIT)
+
+                    .setLoiteringDelay(Constants.LOITERING_DELAY)
+
+                            // Create the geofence.
+                    .build());
+        }
+
+        return initialList;
+    }
+
 
 }

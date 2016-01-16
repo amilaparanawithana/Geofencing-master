@@ -109,8 +109,6 @@ public class LocationActivity extends FragmentActivity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        System.out.println("************************ on create "+InternalStorageUtil.readFromFile(getApplicationContext()));
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
@@ -233,6 +231,13 @@ public class LocationActivity extends FragmentActivity implements
         }
 
         addItem(view);
+    }
+
+    @Override
+    public void onBackPressed() {
+        setContentView(R.layout.main_activity);
+        super.onBackPressed();
+//        finish();
     }
 
     /**
@@ -359,16 +364,6 @@ public class LocationActivity extends FragmentActivity implements
      */
     public void populateGeofenceList(HashMap<String, LatLng> locationsList) {
 
-        try {
-            FileInputStream fileIn = openFileInput("mytextfile.txt");
-            if (fileIn != null) {
-
-                InputStreamReader InputRead = new InputStreamReader(fileIn);
-            }
-        } catch (FileNotFoundException fn) {
-
-        }
-
         Constants.MY_LANDMARKS.putAll(locationsList);
         for (Map.Entry<String, LatLng> entry : Constants.MY_LANDMARKS.entrySet()) {
 
@@ -460,24 +455,20 @@ public class LocationActivity extends FragmentActivity implements
 
     @Override
     protected void onPause() {
-
-        System.out.println("************************* going to write on pause");
         InternalStorageUtil.writeToFile(persistLocations, getApplicationContext());
+        setContentView(R.layout.activity_main);
         super.onPause();
     }
 
     @Override
     protected void onResume() {
-
-        System.out.println("***************************** on resume --" + InternalStorageUtil.readFromFile(getApplicationContext()));
         super.onResume();
     }
 
     @Override
     protected void onDestroy() {
-
-        System.out.println("************************* going write at destroy");
         InternalStorageUtil.writeToFile(persistLocations, getApplicationContext());
+        setContentView(R.layout.activity_main);
         super.onDestroy();
     }
 }

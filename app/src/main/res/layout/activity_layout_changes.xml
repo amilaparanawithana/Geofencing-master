@@ -22,7 +22,7 @@
          than a ListView when there aren't many rows). -->
     <ScrollView android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background">
+        android:background="@drawable/background2">
 
         <!-- Note that this LinearLayout has the "animateLayoutChanges" property set to true.
              This tells the framework to automatically animate child views (in this case, rows)

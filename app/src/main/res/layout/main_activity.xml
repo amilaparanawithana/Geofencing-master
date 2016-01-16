@@ -26,7 +26,7 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1"
-        android:background="@drawable/background">
+        android:background="@drawable/background2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:layout_alignParentRight="true"
             android:onClick="removeGeofencesButtonHandler"
             android:background="@drawable/delete"
-            android:layout_gravity="right" />
+            android:layout_gravity="left" />
 
         <Button
             android:id="@+id/add_geofences_button"
@@ -47,8 +47,14 @@
             android:layout_width="50dp"
             android:layout_alignParentLeft="true"
             android:onClick="addGeofencesButtonHandler"
-            android:background="@drawable/add"
-            android:layout_gravity="right"/>
+            android:background="@drawable/add" />
+        <!--<Button-->
+            <!--android:id="@+id/back_geofences_button"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:onClick="backGeofencesButtonHandler"-->
+            <!--android:background="@drawable/add" />-->
 
     </LinearLayout>
 

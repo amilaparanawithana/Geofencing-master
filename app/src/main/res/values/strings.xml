@@ -54,7 +54,7 @@
 
 
 
-    <string name="app_name">ToDoListApp</string>
+    <string name="app_name">GeoBuddy</string>
     <!--<string name="app_name">MapTest</string>-->
     <!-- Titles -->
     <!--<string name="app_name">Animations Demo</string>-->
@@ -62,7 +62,7 @@
     <string name="title_card_flip">Card Flip</string>
     <string name="title_screen_slide">Screen Slide</string>
     <string name="title_zoom">Zoom</string>
-    <string name="title_layout_changes">Click To Continue</string>
+    <string name="title_layout_changes">Glad to see you.. Click to go..</string>
     <!--<string name="title_template_step">Step <xliff:g id="step_number">%1$d</xliff:g>: Lorem-->
         <!--Ipsum</string>-->
 

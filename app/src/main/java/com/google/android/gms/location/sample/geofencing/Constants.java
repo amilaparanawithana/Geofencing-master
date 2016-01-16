@@ -67,7 +67,6 @@ public final class Constants {
         MY_LANDMARKS.put("Library", new LatLng(6.912745, 79.858870));
 
         //Amila Home
-        MY_LANDMARKS.put("Amila Home", new LatLng( 6.7967605, 79.8992293));
 
         //Malabe
         MY_LANDMARKS.put("Malabe", new LatLng(6.903983, 79.955003));
@@ -82,10 +81,6 @@ public final class Constants {
         MY_LANDMARKS.put("Push Home", new LatLng( 7.046655,80.128387));
 
         MY_LANDMARKS.put("CSE", new LatLng( 6.796928, 79.900432));
-        MY_LANDMARKS.put("CSE2", new LatLng( 6.797019, 79.899906));
-
-
-        ;
 
     }
 }
